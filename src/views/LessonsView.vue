@@ -149,7 +149,7 @@ const handleSearch = async () => {
   }
   
   try {
-    const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(searchQuery.value)}`);
+    const response = await fetch(`https://backend-cst3144-eqir.onrender.com/search?q=${encodeURIComponent(searchQuery.value)}`);
     if (response.ok) {
       lessons.value = await response.json();
     }
@@ -161,7 +161,7 @@ const handleSearch = async () => {
 // fetch lessons from backend
 const fetchLessons = async () => {
   try {
-    const response = await fetch('http://localhost:3000/lessons');
+    const response = await fetch('https://backend-cst3144-eqir.onrender.com/lessons');
     if (response.ok) {
       lessons.value = await response.json();
     }

@@ -171,7 +171,7 @@ const removeFromCart = (item) => {
 // put request to update lesson spaces
 const updateLessonSpaces = async (orderedLessons) => {
   const requests = orderedLessons.map(lesson =>
-    fetch(`http://localhost:3000/lessons/${lesson.id}`, {
+    fetch(`https://backend-cst3144-eqir.onrender.com/lessons/${lesson.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ updateType: 'decrement', decrementBy: lesson.quantity })
@@ -194,7 +194,7 @@ const processCheckout = async () => {
       lessons: cartItems.value.map(item => ({ id: item.id, quantity: 1 }))
     };
     
-    const response = await fetch('http://localhost:3000/orders', {
+    const response = await fetch('https://backend-cst3144-eqir.onrender.com/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(orderData)

@@ -7,7 +7,7 @@ const isAuthenticated = ref(false);
 export const useAuthStore = () => {
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('https://backend-cst3144-eqir.onrender.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -30,7 +30,7 @@ export const useAuthStore = () => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await fetch('http://localhost:3000/auth/register', {
+      const response = await fetch('https://backend-cst3144-eqir.onrender.com/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })
